@@ -25,7 +25,7 @@
 		<?php
 			date_default_timezone_set('Asia/Jakarta');
 			$date = new DateTime();
-			print_r( $date->format('l, d F Y H:i').' WIB';
+			print_r( $date->format('l, d F Y H:i').' WIB');
 		?>
       </div>
       <ul class="nospace group" style="color:white">
