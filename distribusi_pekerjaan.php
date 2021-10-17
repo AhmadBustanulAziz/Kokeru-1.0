@@ -88,18 +88,18 @@ if (isset($_POST["delete"])) {
 				}
 				$i = 1;
 				while ($row = $result->fetch_object()){
-                  echo '<tr>';
-                    echo '<td>'.$i. '</td>';
-                    echo '<td>'.$row->nama. '</td>';
-                    echo '<td>'.$row->ruang. '</td>';
-					echo '<td>
+                  print_r('<tr>');
+                    print_r('<td>'.$i. '</td>');
+                    print_r('<td>'.$row->nama. '</td>');
+                    print_r('<td>'.$row->ruang. '</td>');
+					print_r('<td>
                       <!-- Button Edit Ruang -->
                       <button type="button" class="btn btn-danger" value="delete">
 					  <a onclick="javascript:confirmationDelete($(this));return false;" class="btn btn-danger btn-sm" href="delete.php?id_laporan='.$row->id_laporan.'">
                         <span class="fa fa-trash"> Hapus
                         </span>
-                      </a> </td>';
-					 echo '</tr>';
+                      </a> </td>');
+					 print_r('</tr>');
 					 $i++;
 				}
 				  $result->free();

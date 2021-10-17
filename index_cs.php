@@ -27,80 +27,80 @@
 		<?php
 			date_default_timezone_set('Asia/Jakarta');
 			$date = new DateTime();
-			echo $date->format('l, d F Y H:i').' WIB';
+			print_r($date->format('l, d F Y H:i').' WIB');
 		?>
       </div>
       <ul class="nospace group" style="color:white">
 		<?php  	
 			$i = 0;
 				if (fmod($i,4) == 0){
-					echo '<li class="one_quarter first"';
+					print_r('<li class="one_quarter first"');
 				}
 				else{
-					echo '<li class="one_quarter"';
+					print_r('<li class="one_quarter"');
 				}
 				if ($rlaporan['status'] == 'SUDAH'){
-					echo 'style="background-color:green">';						
+					print_r('style="background-color:green">');						
 				}
 				else{
-					echo 'style="background-color:orange">';						
+					print_r('style="background-color:orange">');						
 				}
-				echo '<article style="padding:25px">';
-				echo '<p style="font-size:30px">';
+				print_r('<article style="padding:25px">');
+				print_r('<p style="font-size:30px">');
 				$id_ruang = $rlaporan['id_ruang'];
 				$qruang=mysqli_query($db,"SELECT * FROM ruang where id_ruang='$id_ruang'")or die(mysqli_error());
 				$rruang=mysqli_fetch_array($qruang);
-				echo $rruang['nama'];
-				echo '</p>';
+				print_r($rruang['nama']);
+				print_r('</p>');
 				
-				echo '<h6 style="margin-bottom:10px;">';
-				echo $rlaporan['status'];
-				echo '</h6>';
+				print_r('<h6 style="margin-bottom:10px;">');
+				print_r($rlaporan['status']);
+				print_r('</h6>');
 
-				echo '<p>';
+				print_r('<p>');
 				$id_user = $rlaporan['id_user'];
 				$quser=mysqli_query($db,"SELECT * FROM user where id_user='$id_user'")or die(mysqli_error());
 				$ruser=mysqli_fetch_array($quser);
-				echo $ruser['nama'];
-				echo '</p>';
-				echo '<footer><a class="btn btn-success btn-sm" href="update_ruang_cs.php?id_laporan='.$rlaporan['id_laporan'].'">Update</a></footer>';
-				echo '</article>';
-				echo '</li>';
+				print_r($ruser['nama']);
+				print_r('</p>');
+				print_r('<footer><a class="btn btn-success btn-sm" href="update_ruang_cs.php?id_laporan='.$rlaporan['id_laporan'].'">Update</a></footer>');
+				print_r('</article>');
+				print_r('</li>');
 				$i = $i+1;			
 			while ($row = $qlaporan->fetch_object()){
 				if (fmod($i,4) == 0){
-					echo '<li class="one_quarter first"';
+					print_r('<li class="one_quarter first"');
 				}
 				else{
-					echo '<li class="one_quarter"';
+					print_r('<li class="one_quarter"');
 				}
 				if ($row->status == 'SUDAH'){
-					echo 'style="background-color:green">';						
+					print_r('style="background-color:green">');						
 				}
 				else{
-					echo 'style="background-color:orange">';						
+					print_r('style="background-color:orange">');						
 				}
-				echo '<article style="padding:25px">';
-				echo '<p style="font-size:30px">';
+				print_r('<article style="padding:25px">');
+				print_r('<p style="font-size:30px">');
 				$id_ruang = $row->id_ruang;
 				$qruang=mysqli_query($db,"SELECT * FROM ruang where id_ruang='$id_ruang'")or die(mysqli_error());
 				$rruang=mysqli_fetch_array($qruang);
-				echo $rruang['nama'];
-				echo '</p>';
+				print_r($rruang['nama']);
+				print_r('</p>');
 				
-				echo '<h6 style="margin-bottom:10px;">';
-				echo $row->status;
-				echo '</h6>';
+				print_r('<h6 style="margin-bottom:10px;">');
+				print_r($row->status);
+				print_r('</h6>');
 
-				echo '<p>';
+				print_r('<p>');
 				$id_user = $row->id_user;
 				$quser=mysqli_query($db,"SELECT * FROM user where id_user='$id_user'")or die(mysqli_error());
 				$ruser=mysqli_fetch_array($quser);
-				echo $ruser['nama'];
-				echo '</p>';
-				echo '<footer><a class="btn btn-success btn-sm" href="update_ruang_cs.php?id_laporan='.$row->id_laporan.'">Update</a></footer>';
-				echo '</article>';
-				echo '</li>';
+				print_r($ruser['nama']);
+				print_r('</p>');
+				print_r('<footer><a class="btn btn-success btn-sm" href="update_ruang_cs.php?id_laporan='.$row->id_laporan.'">Update</a></footer>');
+				print_r('</article>');
+				print_r('</li>');
 				$i = $i+1;
 			}
 		?>
@@ -124,9 +124,9 @@
                                 <div class="form-group">
                                     <h5 style="color:black">Ruang: </h5>
 									<?php 
-										echo '<h6 style="color:black">';
-										echo $rruang['nama'];
-										echo '</h6>';
+										print_r('<h6 style="color:black">');
+										print_r($rruang['nama']);
+										print_r('</h6>');
 									?>
                                 </div>
                             </div>

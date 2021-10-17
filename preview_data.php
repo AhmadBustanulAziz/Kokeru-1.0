@@ -54,7 +54,7 @@
                 $sql = mysqli_query($db, $query); // Eksekusi/Jalankan query dari variabel $query
 
                 while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
-                    echo '<option value="'.$data['tahun'].'">'.$data['tahun'].'</option>';
+                    print_r( '<option value="'.$data['tahun'].'">'.$data['tahun'].'</option>';
                 }
                 ?>
             </select>
@@ -79,26 +79,26 @@
 
         if($filter == '1'){ // Jika filter nya 1 (per tanggal)
             $tgl = date('d-m-y', strtotime($_GET['tanggal']));
-            echo '<center>';
-            echo '<h4><b>Tanggal '.$tgl.'</b></h4><br /><br />';
-            echo '</center>';
+            print_r( '<center>';
+            print_r( '<h4><b>Tanggal '.$tgl.'</b></h4><br /><br />';
+            print_r( '</center>';
             $query = "SELECT status, tgl, user.nama as username, ruang.nama as ruangname FROM user, ruang, laporan WHERE user.id_user = laporan.id_user AND ruang.id_ruang = laporan.id_ruang AND DATE(tgl)='".$_GET['tanggal']."' ORDER BY tgl"; // Tampilkan data  sesuai tanggal yang diinput oleh user pada filter
         }else if($filter == '2'){ // Jika filter nya 2 (per bulan)
             $nama_bulan = array('', 'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
-            echo '<center>';
-            echo '<h4><b>Bulan '.$nama_bulan[$_GET['bulan']].' '.$_GET['tahun'].'</b></h4><br /><br />';
-            echo '</center>';
+            print_r( '<center>';
+            print_r( '<h4><b>Bulan '.$nama_bulan[$_GET['bulan']].' '.$_GET['tahun'].'</b></h4><br /><br />';
+            print_r( '</center>';
              $query = "SELECT status, tgl, user.nama as username, ruang.nama as ruangname FROM user, ruang, laporan WHERE user.id_user = laporan.id_user AND ruang.id_ruang = laporan.id_ruang AND MONTH(tgl)='".$_GET['bulan']."' ORDER BY tgl"; // Tampilkan data  sesuai bulan dan tahun yang diinput oleh user pada filter
         }else{ // Jika filter nya 3 (per tahun)
-            echo '<center>';
-            echo '<h4><b>Tahun '.$_GET['tahun'].'</b></h4><br /><br />';
-            echo '</center>';
+            print_r( '<center>';
+            print_r( '<h4><b>Tahun '.$_GET['tahun'].'</b></h4><br /><br />';
+            print_r( '</center>';
              $query = "SELECT status, tgl, user.nama as username, ruang.nama as ruangname FROM user, ruang, laporan WHERE user.id_user = laporan.id_user AND ruang.id_ruang = laporan.id_ruang AND YEAR(tgl)='".$_GET['tahun']."' ORDER BY tgl"; // Tampilkan data sesuai tahun yang diinput oleh user pada filter
         }
     }else{ // Jika user tidak mengklik tombol tampilkan
-        echo '<center>';
-        echo '<h4>Semua Data</h4><br/><br />';
-        echo '</center>';
+        print_r( '<center>';
+        print_r( '<h4>Semua Data</h4><br/><br />';
+        print_r( '</center>';
          $query = "SELECT status, tgl, user.nama as username, ruang.nama as ruangname FROM user, ruang, laporan WHERE user.id_user = laporan.id_user AND ruang.id_ruang = laporan.id_ruang ORDER BY tgl"; 
     }
     ?>
@@ -119,16 +119,16 @@
         while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
             $tgl = date('d-m-Y', strtotime($data['tgl'])); // Ubah format tanggal jadi dd-mm-yyyy
 
-            echo "<tr>";
-            echo "<td>".$no++."</td>";
-            echo "<td>".$tgl."</td>";
-            echo "<td>".$data['username']."</td>";
-            echo "<td>".$data['ruangname']."</td>";
-            echo "<td>".$data['status']."</td>";
-            echo "</tr>";
+            print_r( "<tr>";
+            print_r( "<td>".$no++."</td>";
+            print_r( "<td>".$tgl."</td>";
+            print_r( "<td>".$data['username']."</td>";
+            print_r( "<td>".$data['ruangname']."</td>";
+            print_r( "<td>".$data['status']."</td>";
+            print_r( "</tr>";
         }
     }else{ // Jika data tidak ada
-        echo "<tr><td colspan='5'>Data tidak ada</td></tr>";
+        print_r( "<tr><td colspan='5'>Data tidak ada</td></tr>";
     }
     ?>
     </table>

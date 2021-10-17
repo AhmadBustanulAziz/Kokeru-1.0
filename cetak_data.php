@@ -69,11 +69,11 @@
         ?>
         <tr>
             <td>
-            	<?php echo $no++; ?>
+            	<?php print_r($no++); ?>
             </td>
-            <td><?php echo $data['tanggal']; ?></td>
-            <td><?php echo $data['nama']; ?></td>
-            <td><?php echo $data['jumlah']; ?></td>
+            <td><?php print_r($data['tanggal']); ?></td>
+            <td><?php print_r($data['nama']); ?></td>
+            <td><?php print_r($data['jumlah']); ?></td>
         </tr>
         <?php 
         //}

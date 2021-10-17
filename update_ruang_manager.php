@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
 						die("Could not query the database: <br>".$db->error);
 					}
 					while ($row=$result->fetch_object()) {
-						echo'<option value="'.$row->id_user.'">'.$row->nama.'</option>';
+						print_r('<option value="'.$row->id_user.'">'.$row->nama.'</option>';
 					}
 					$result->free();
 				?>
@@ -79,7 +79,7 @@ if (isset($_POST["submit"])) {
 						die("Could not query the database: <br>".$db->error);
 					}
 					while ($row=$result->fetch_object()) {
-						echo'<option value="'.$row->id_ruang.'">'.$row->nama.'</option>';
+						print_r('<option value="'.$row->id_ruang.'">'.$row->nama.'</option>';
 					}
 					$result->free();
 					$db->close();

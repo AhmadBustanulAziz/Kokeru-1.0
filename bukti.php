@@ -44,9 +44,9 @@
 			        <div class="form-group">
 					<h5>Ruang: </h5>
 					<?php 
-						echo '<h6 style="color:black">';
-						echo $rruang['nama'];
-						echo '</h6>';
+						print_r('<h6 style="color:black">');
+						print_r($rruang['nama']);
+						print_r('</h6>');
 					?>
 			        </div>
 		   		</div>
@@ -56,9 +56,9 @@
 			        <div class="form-group">
 					<h5>CS:  </h5>
 					<?php 
-						echo '<h6>';
-						echo $ruser['nama'];
-						echo '</h6>';
+						print_r('<h6>');
+						print_r( $ruser['nama']);
+						print_r( '</h6>');
 					?>
 			        </div>
 		   		</div>
@@ -81,11 +81,11 @@
 					die ("Could not query the database: <br />". $db->error ."<br>Query: ".$query);
 				}
 				else{
-					echo '<h5>bukti 1:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti1).'" alt="Tidak Ada Foto"/><hr>';
-					echo '<h5>bukti 2:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti2).'" alt="Tidak Ada Foto"/><hr>';
-					echo '<h5>bukti 3:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti3).'" alt="Tidak Ada Foto"/><hr>';
-					echo '<h5>bukti 4:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti4).'" alt="Tidak Ada Foto"/><hr>';
-					echo '<h5>bukti 5:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti5).'" alt="Tidak Ada Foto"/><hr>';
+					print_r( '<h5>bukti 1:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti1).'" alt="Tidak Ada Foto"/><hr>');
+					print_r( '<h5>bukti 2:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti2).'" alt="Tidak Ada Foto"/><hr>');
+					print_r( '<h5>bukti 3:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti3).'" alt="Tidak Ada Foto"/><hr>');
+					print_r( '<h5>bukti 4:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti4).'" alt="Tidak Ada Foto"/><hr>');
+					print_r( '<h5>bukti 5:</h5><img src="data:image/jpeg;base64,'.base64_encode($row->bukti5).'" alt="Tidak Ada Foto"/><hr>');
 				}
 				  $result->free();
 				  $db->close();

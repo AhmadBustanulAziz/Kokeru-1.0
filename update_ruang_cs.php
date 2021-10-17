@@ -69,9 +69,9 @@ if (isset($_POST["submit"])) {
 			        <div class="form-group">
 					<h5>Ruang: </h5>
 					<?php 
-						echo '<h6 style="color:black">';
-						echo $rruang['nama'];
-						echo '</h6>';
+						print_r( '<h6 style="color:black">';
+						print_r( $rruang['nama'];
+						print_r( '</h6>';
 					?>
 			        </div>
 		   		</div>
@@ -81,9 +81,9 @@ if (isset($_POST["submit"])) {
 			        <div class="form-group">
 					<h5>CS:  </h5>
 					<?php 
-						echo '<h6>';
-						echo $ruser['nama'];
-						echo '</h6>';
+						print_r( '<h6>';
+						print_r( $ruser['nama'];
+						print_r( '</h6>';
 					?>
 			        </div>
 		   		</div>
